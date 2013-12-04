@@ -32,6 +32,7 @@ class CliController extends Jien_Controller {
                 );
 
                 try{ Jien::model('Post')->save($result); } catch (Exception $e){
+                    echo $e->getMessage();
                     echo "duplicate: " . $link . "\r\n\r\n";
                 }
             }
