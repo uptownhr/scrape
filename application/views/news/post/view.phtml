@@ -1,0 +1,80 @@
+<?php
+$c = 0;
+$row = $this->post->row();
+?>
+
+<div style="margin: 0 auto; border: 0px solid;">
+
+    <div class="posts grid list">
+
+        <div class="post">
+            <ul class="post-actions">
+                <li class="post-share desktop">
+                    <a href="#" class="share-link">
+                        <i class="icon-share"></i>
+                        <span class="action">Share</span>
+                    </a>
+                </li>
+                <li class="post-discuss">
+                    <a class="discuss-link go-to-comments" href="<?php echo $row['url']; ?>" target="_blank">
+                        <i class="icon-comment"></i>
+
+                        <span class="action">Launch</span>
+                    </a>
+                </li>
+                <li class="post-more mobile">
+                    <a class="more-link">
+                        <i class="icon-share"></i>
+                        <span class="action">Text</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="post-content">
+
+                <div class="post-upvote">
+                    <a class="upvote-link not-voted" href="#">
+                        <i class="icon-up"></i>
+                        <span>Upvote</span>
+                    </a>
+                </div>
+                <div class="post-info">
+                    <h3 class="post-heading">
+                        <a href="/post/view/id/<?php echo $row['post_id']; ?>/title/<?php echo rawurlencode($row['title']); ?>" class="post-title"><?php echo $row['title']; ?></a>
+                        <span class="post-domain"><?php echo $row['domain']; ?></span>
+                    </h3>
+                    <p class="post-meta">
+                        <span class="points">2 <span class="unit">points</span></span>
+                        by
+                        <a class="post-author" href="/user/lauren"><?php echo $row['author']; ?></a>
+                        <span class="post-time"><?php echo Jien::dateSince($row['created']); ?></span>
+                        <span class="comments"><a class="go-to-comments" href="/posts/4JZ7b2yY9cGjhMQaf">0 comments</a></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="margin: 0 auto; width: 1010px; border: 0px solid;" class="post post-content">
+
+        <div class="post-message" style="position: relative;"><?php echo $row['body']; ?></div>
+
+        <div style="text-align: center;">
+            <iframe scrolling="no" style="border: 0; width: 728px; height: 90px;" src="http://coinurl.com/get.php?id=19519"></iframe>
+        </div>
+
+        <div class="post-message" style="position: relative;">
+            <h3>Other articles like this</h3>
+            <?php
+            if(!empty($row)){
+                $posts = Jien::model("Post")->orderBy('rand()')->limit(5)->get();
+                foreach($posts->rows() AS $key=>$row){
+                    echo "<li><a href='/post/view/id/{$row['post_id']}'>{$row['title']}</a></li>";
+                }
+            }
+            ?>
+        </div>
+    </div>
+
+</div>

@@ -7,7 +7,7 @@ class IndexController extends My_Controller {
     }
 
     public function indexAction(){
-        //header("Location: /admin");exit;
+        $this->view->posts = Jien::model("Post")->withPager($this->params('page', 1))->get();
     }
 
 }

@@ -1,42 +1,49 @@
-<div Class="jumbotron">
-  <h1>super Awesome Marketing Speak!</h1>
-  <p Class="lead">cras Justo Odio, Dapibus Ac Facilisis In, Egestas Eget Quam. Fusce Dapibus, Tellus Ac Cursus Commodo, Tortor Mauris Condimentum Nibh, Ut Fermentum Massa Justo Sit Amet Risus.</p>
-  <a Class="btn Btn-large Btn-success" Href="#">sign Up Today</a>
+<div class="single-post grid" style="padding-bottom: 10px; display: none;">
+    <button>Follow Us On Twitter</button>
 </div>
 
-<hr>
+<div style="margin: 0 auto; width: 1010px; border: 0px solid;">
 
-<div Class="row-fluid Marketing">
-  <div Class="span6">
-    <h4>subheading</h4>
-    <p>
-<?php
-     $pubkey = $this->params('pubkey', '948a37151cdfb0251ec823707ead7951');
-?>
-<script type="text/javascript">
-     var _dnz = {};
-_dnz.pubkey    = "<?php echo $pubkey; ?>";
-_dnz.host      = ('https:'==document.location.protocol?'https://':'http://');
-document.write(unescape("%3Cscript src='" + _dnz.host + "denizen.app/ad/run?pubkey=" + _dnz.pubkey + "&teaser=" + _dnz.teaser + "&teasersnd=" + _dnz.teasersnd + "' type='text/javascript'%3E%3C/script%3E"));
-</script>
+    <div class="posts grid list" style="width: 75%; border: 0px solid; margin: 0; float: left;">
+        <?php
+        $c = 0;
+        foreach($this->posts->rows() AS $key=>$row){
+            $c++;
+            ?>
+            <div class="post" style="width: 100%;">
 
-    </p>
+                <div class="post-content" style="width: 100%;">
+                    <span class="post-rank"><?php echo $c; ?></span>
+                    <div class="post-upvote">
+                        <a class="upvote-link not-voted" href="#">
+                            <i class="icon-up"></i>
+                            <span>Upvote</span>
+                        </a>
+                    </div>
+                    <div class="post-info">
+                        <h3 class="post-heading">
+                            <a href="/post/view/id/<?php echo $row['post_id']; ?>/title/<?php echo rawurlencode($row['title']); ?>" class="post-title"><?php echo $row['title']; ?></a>
+                            <span class="post-domain"><?php echo $row['domain']; ?></span>
+                        </h3>
+                        <p class="post-meta">
+                            <span class="points">posted</span>
+                            by
+                            <a class="post-author" href="/user/lauren"><?php echo $row['author']; ?></a>
+                            <span class="post-time"><?php echo Jien::dateSince($row['created']); ?></span>
+                            <span class="comments"><a class="go-to-comments" href="/posts/4JZ7b2yY9cGjhMQaf">0 comments</a></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
 
-    <h4>subheading</h4>
-    <p>morbi Leo Risus, Porta Ac Consectetur Ac, Vestibulum At Eros. Cras Mattis Consectetur Purus Sit Amet Fermentum.</p>
+    <div style="float: right; padding-top: 8px; width: 23%;border: 0px solid; text-align: center; background-color: white; margin-left: 4px;">
+        <iframe scrolling="no" style="border: 0; width: 160px; height: 600px;" src="http://coinurl.com/get.php?id=19640"></iframe>
+    </div>
 
-    <h4>subheading</h4>
-    <p>maecenas Sed Diam Eget Risus Varius Blandit Sit Amet Non Magna.</p>
-  </div>
+    <div style="clear: both; "></div>
 
-  <div Class="span6">
-    <h4>subheading</h4>
-    <p>donec Id Elit Non Mi Porta Gravida At Eget Metus. Maecenas Faucibus Mollis Interdum.</p>
 
-    <h4>subheading</h4>
-    <p>morbi Leo Risus, Porta Ac Consectetur Ac, Vestibulum At Eros. Cras Mattis Consectetur Purus Sit Amet Fermentum.</p>
 
-    <h4>subheading</h4>
-    <p>maecenas Sed Diam Eget Risus Varius Blandit Sit Amet Non Magna.</p>
-  </div>
 </div>
