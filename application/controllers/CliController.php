@@ -6,38 +6,52 @@ class CliController extends Jien_Controller {
         parent::init();
     }
 
-    public function googleRssAction(){
-        $url = "https://news.google.com/news/feeds?q=bitcoin&output=rss";
-        $channel = new Zend_Feed_Rss($url);
+    public function scrapeAction(){
 
-        // record through posts and save to $results array
-        if($channel){
-            foreach($channel AS $item){
-                $title = $item->title();
-                if(is_array($title)){
-                    $title = $title[0]->nodeValue;
+        $sources = Jien::model('Scrapesource')->get()->rows();
+
+        foreach($sources as $source){
+            echo "Scraping URL:" . $source['url'] . "\r\n\r\n";
+            if( $source['parser'] == 'rss' ){
+                try{
+                    $response = new Zend_Feed_Rss($source['url']);
+                }catch(Exception $e){
+                    echo "ERROR URL: " . $source['url'] . "\r\n";
                 }
-                $link = $item->link();
-                $body = $item->description();
-                $url = $parse = parse_url($link);
-                //$date = $item->pubDate();
-                //$body = strip_tags($body);
 
-                $result = array(
-                    'title' => $title,
-                    'url' => $link,
-                    'body' => $body,
-                    'author' => 'Tommy Lee',
-                    'domain' => $url['host']
-                );
 
-                try{ Jien::model('Post')->save($result); } catch (Exception $e){
-                    echo $e->getMessage();
-                    echo "duplicate: " . $link . "\r\n\r\n";
+                if($response){
+                    foreach($response as $item){
+
+                        $title = $item->title();
+                        if(is_array($title)){
+                            $title = $title[0]->nodeValue;
+                        }
+
+                        $result = array(
+                            'source_id' => $source['scrapesource_id'],
+                            'title' => $title,
+                            'url' => $item->link(),
+                            'body' => $item->description(),
+                            'author' => $source['name']
+                        );
+
+                        print_r($result);
+
+                        try{
+                            $res = Jien::model('Post')->save($result);
+                        }catch(Exception $e){
+
+                        }
+                    }
+                }else{
+                    echo "Error Getting Content: " . $source['url'] . "\r\n";
                 }
+            }else{
+                echo "Skipping: " . $source['url'] . "\r\n";
             }
-        }
 
+        }
         exit;
     }
 }

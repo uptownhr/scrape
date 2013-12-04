@@ -293,6 +293,23 @@ class AdminController extends My_Controller {
     }
     //scaffolder Wordpress end
 
+    
+    //scaffolder Scrapesource start
+    public function scrapesourcesAction(){
+    	$this->view->model = "Scrapesource";
+    	$this->view->primary = Jien::model($this->view->model)->getPrimary();
+    	$this->view->data = Jien::model($this->view->model)->orderBy("scrapesource.scrapesource_id DESC")->withPager($this->params('page', 1))->filter($this->params())->get();
+    }
+
+    public function scrapesourceAction(){
+    	$this->view->model = "Scrapesource";
+    	$id = $this->params('id');
+    	if($id){
+    		$this->view->data = Jien::model($this->view->model)->get($id);
+    	}
+    }
+    //scaffolder Scrapesource end
+
     //scaffolder Post start
     public function postsAction(){
     	$this->view->model = "Post";
