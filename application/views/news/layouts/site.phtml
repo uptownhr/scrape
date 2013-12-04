@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html class="">
+
+<head>
+    <link rel="stylesheet" href="/themes/news/style.css">
+    <meta name="fragment" content="!">
+    <title><?php echo $this->title; ?></title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+</head>
+<body style="min-height: 960px;">
+<div class="outer-wrapper ">
+    <div id="" class="mobile-nav">
+        <div>
+            <ul>
+                <li>
+                    <a class="top" href="/top">
+                        Top
+                    </a>
+                </li>
+                <li>
+                    <a class="new" href="/new">
+                        New
+                    </a>
+                </li>
+                <li>
+                    <a class="digest" href="/digest">
+                        Digest
+                    </a>
+                </li>
+                <li>
+                    <a href="/submit">
+                        Post
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-wrapper template-">
+        <header class="header grid">
+            <a id="mobile-menu" href="#menu" class="mobile mobile-button menu">
+                <i class="icon-menu"></i>
+                <span>Menu</span>
+            </a>
+            <ul class="nav site-nav desktop">
+                <li>
+                    <div class="search empty">
+                        <input id="search" type="search" value="" class="search-field" placeholder="search">
+                    </div>
+                </li>
+            </ul>
+            <h1 class="logo">
+                <a href="/"><?php echo $this->title; ?></a>
+            </h1>
+            <ul class="nav user-nav desktop">
+                <li>
+                    <a id="submit" class="submit button" href="/submit">Post</a>
+                </li>
+            </ul>
+            <div class="auth-buttons">
+                <div id="login-buttons" class="login-buttons-dropdown-align-right">
+                    <div class="login-link-and-dropdown-list false">
+                        <a class="login-link-text" id="login-sign-in-link">Subscribe to our RSS/XML</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="posts grid list">
+            <div class="post post-0  " id="4JZ7b2yY9cGjhMQaf">
+                <ul class="post-actions">
+                    <li class="post-share desktop">
+                        <a href="#" class="share-link">
+                            <i class="icon-share"></i>
+                            <span class="action">Share</span>
+                        </a>
+                    </li>
+                    <li class="post-discuss">
+                        <a class="discuss-link go-to-comments" href="/posts/4JZ7b2yY9cGjhMQaf">
+                            <i class="icon-comment"></i>
+                            <span class="count">0</span>
+                            <span class="action">Discuss</span>
+                        </a>
+                    </li>
+                    <li class="post-more mobile">
+                        <a class="more-link">
+                            <i class="icon-share"></i>
+                            <span class="action">Text</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="post-content">
+                    <span class="post-rank">1</span>
+                    <div class="post-upvote">
+                        <a class="upvote-link not-voted" href="#">
+                            <i class="icon-up"></i>
+                            <span>Upvote</span>
+                        </a>
+                    </div>
+                    <div class="post-info">
+                        <h3 class="post-heading">
+                            <a href="http://www.ahier.net/2013/11/from-meaningful-use-to-meaningful.html" class="post-title" target="_blank">This is a test post</a>
+                            <span class="post-domain">www.test.net</span>
+                        </h3>
+                        <p class="post-meta">
+                            <span class="points">2 <span class="unit">points</span></span>
+                            by
+                            <a class="post-author" href="/user/lauren">lauren</a>
+                            <span class="post-time">10 minutes ago</span>
+                            <span class="comments"><a class="go-to-comments" href="/posts/4JZ7b2yY9cGjhMQaf">0 comments</a></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid more-button">
+            <a class="more-link" href="/top/20">
+                Load more
+            </a>
+        </div>
+        <div class="overlay hidden"></div>
+    </div>
+</div>
+</body>
+
+</html>
