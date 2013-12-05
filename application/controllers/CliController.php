@@ -28,8 +28,13 @@ class CliController extends Jien_Controller {
                             $title = $title[0]->nodeValue;
                         }
 
+                        $url = $item->link();
+                        $domain = parse_url(url);
+                        $domain = $domain['host'];
+
                         $result = array(
                             'source_id' => $source['scrapesource_id'],
+                            'domain' => $domain,
                             'title' => $title,
                             'url' => $item->link(),
                             'body' => $item->description(),
