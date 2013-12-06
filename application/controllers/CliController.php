@@ -29,24 +29,31 @@ class CliController extends Jien_Controller {
                         }
 
                         $url = $item->link();
-                        $domain = parse_url(url);
+                        $domain = parse_url($url);
                         $domain = $domain['host'];
+
+                        $date = date( 'Y-m-d G:i:s', strtotime($item->pubDate()) );
 
                         $result = array(
                             'source_id' => $source['scrapesource_id'],
                             'domain' => $domain,
                             'title' => $title,
-                            'url' => $item->link(),
+                            'url' => $url,
                             'body' => $item->description(),
-                            'author' => $source['name']
+                            'author' => $source['name'],
+                            'date' => $date
                         );
 
-                        print_r($result);
+                        echo $date . "\r\n";
 
                         try{
                             $res = Jien::model('Post')->save($result);
-                        }catch(Exception $e){
 
+                            if($res){
+                                echo "saved $url \r\n\r\n";
+                            }
+                        }catch(Exception $e){
+                            echo "dup $url \r\n\r\n";
                         }
                     }
                 }else{
