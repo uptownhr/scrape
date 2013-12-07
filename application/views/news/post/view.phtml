@@ -58,7 +58,22 @@ $row = $this->post->row();
 
     <div style="" class="post grid post-content">
 
-        <div class="post-message" style="position: relative;"><?php echo $row['body']; ?></div>
+        <div class="post-message" style="position: relative;">
+            <?php echo $row['body']; ?>
+            <div style="margin-top: 10px; text-align: left;">
+                <div class="pw-widget pw-size-medium pw-counter-show">
+                    <a class="pw-button-facebook"></a>
+                    <a class="pw-button-twitter"></a>
+                    <a class="pw-button-email"></a>
+                    <a class="pw-button-post"></a>
+                </div>
+                <script src="http://i.po.st/static/v3/post-widget.js#publisherKey=7o1935pc152ni8vdqf7v" type="text/javascript"></script>
+            </div>
+        </div>
+
+
+
+
 
         <div style="text-align: center;">
             <script type="text/javascript">
@@ -77,6 +92,7 @@ $row = $this->post->row();
         </div>
 
         <div class="post-message" style="position: relative;">
+
             <h3>Other articles like this</h3>
             <?php
             if(!empty($row)){
