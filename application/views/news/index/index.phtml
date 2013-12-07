@@ -22,7 +22,7 @@
                     </div>
                     <div class="post-info">
                         <h3 class="post-heading">
-                            <a href="/post/view/id/<?php echo $row['post_id']; ?>/title/<?php echo rawurlencode($row['title']); ?>" class="post-title"><?php echo $row['title']; ?></a>
+                            <a href="/post/view/id/<?php echo $row['post_id']; ?>/title/<?php echo rawurlencode(Jien::getFriendlyUrl($row['title'])); ?>" class="post-title"><?php echo $row['title']; ?></a>
                             <span class="post-domain"><?php echo $row['domain']; ?></span>
                         </h3>
                         <p class="post-meta">
@@ -36,6 +36,8 @@
                 </div>
             </div>
         <?php } ?>
+        <?php echo $this->pager($this->posts->pager(), 'partials/pager/pager.phtml'); ?>
+
     </div>
 
     <div style="float: right; padding-top: 8px; width: 23%;border: 0px solid; text-align: center; background-color: white; margin-left: 4px;">
