@@ -11,7 +11,7 @@ class PostController extends My_Controller {
     }
 
     public function rssAction(){
-        $posts = Jien::model("Post")->orderBy('post.created DESC')->withPager($this->params('page', 1))->get()->rows();
+        $posts = Jien::model("Post")->orderBy('post.created DESC')->limit(100)->get()->rows();
 
         /**
          * Create the parent feed
@@ -32,8 +32,9 @@ class PostController extends My_Controller {
          * Add one or more entries. Note that entries must
          * be manually added once created.
          */
-        $entry = $feed->createEntry();
-        foreach($posts AS $post){
+
+        foreach($posts AS $key=>$post){
+            $entry = $feed->createEntry();
             $entry->setTitle($post['title']);
             $entry->setLink('http://'.$this->site->row('site_url') . '/post/view/id/' . $post['post_id']);
             $entry->addAuthor(array(
