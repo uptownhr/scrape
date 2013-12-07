@@ -19,7 +19,7 @@
 					<tr>
 						<th width="10"><input type="checkbox" class="trig_bulk_check" name="title-checkbox" /></th>
 						<th class="header" rel="site.site_id">#</th>
-						<th class='header' rel='site.site_title'>Site Title</th><th class='header' rel='site.site_url'>Site Url</th><th class='header' rel='site.twitter_user'>Twitter User</th><th class='header' rel='site.twitter_widget'>Twitter Widget</th><th class='header' rel='site.google_analytics'>Google Analytics</th>
+						<th class='header' rel='site.site_title'>Site Title</th><th class='header' rel='site.site_url'>Site Url</th><th class='header' rel='site.twitter_user'>Twitter User</th>
 			            <th class="header" rel="site.created">Created</th>
 			            <th width="200"></th>
 					</tr>
@@ -29,7 +29,7 @@
 					<tr>
 						<td><input type="checkbox" data-id="<?php echo $value[$this->primary]; ?>" class="bulk_check"/></td>
 						<td><?php echo $value[$this->primary]; ?></td>
-						<td><?php echo $value['site_title']; ?></td><td><?php echo $value['site_url']; ?></td><td><?php echo $value['twitter_user']; ?></td><td><?php echo $value['twitter_widget']; ?></td><td><?php echo $value['google_analytics']; ?></td>
+						<td><?php echo $value['site_title']; ?></td><td><?php echo $value['site_url']; ?></td><td><?php echo $value['twitter_user']; ?></td>
 						<td><?php echo date("m/d/y", strtotime($value['created'])); ?></td>
 						<td>
 							<a href="/admin/site/id/<?php echo $value[$this->primary]; ?>" class="btn btn-default"><span class="icon-eye-open"> View</span></a>
