@@ -2,7 +2,9 @@
 $c = 0;
 $row = $this->post->row();
 ?>
-
+<style>
+    .post-message a { color: #999; font-weight: normal;}
+</style>
 <div style="margin: 0 auto; border: 0px solid;">
 
     <div class="posts grid list">
@@ -54,9 +56,7 @@ $row = $this->post->row();
         </div>
     </div>
 
-
-
-    <div style="margin: 0 auto; width: 1010px; border: 0px solid;" class="post post-content">
+    <div style="" class="post grid post-content">
 
         <div class="post-message" style="position: relative;"><?php echo $row['body']; ?></div>
 
@@ -70,7 +70,7 @@ $row = $this->post->row();
             if(!empty($row)){
                 $posts = Jien::model("Post")->orderBy('rand()')->limit(5)->get();
                 foreach($posts->rows() AS $key=>$row){
-                    echo "<li><a href='/post/view/id/{$row['post_id']}'>{$row['title']}</a></li>";
+                    echo "<li><a style='color: rgb(74, 68, 68); font-weight: normal;' href='/post/view/id/{$row['post_id']}'>{$row['title']}</a></li>";
                 }
             }
             ?>
