@@ -64,6 +64,16 @@
     </div>
 </div>
 
+<?php echo $this->site->row('google_analytics'); ?>
+
+<div style="clear: both;"></div>
+
+<div style="padding: 20px; text-align: center;">
+    Copyright &copy; <?php echo date("Y"); ?> <?php echo $this->site->row('site_url'); ?>
+    <p>
+        Made with love and care by <a target="_blank" href="http://twitter.com/<?php echo $this->site->row('twitter_user'); ?>">@<?php echo $this->site->row('twitter_user'); ?></a>
+    </p>
+</div>
 
 <!-- Kontera(TM);-->
 <script type='text/javascript'>

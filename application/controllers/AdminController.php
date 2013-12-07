@@ -326,6 +326,22 @@ class AdminController extends My_Controller {
     }
     //scaffolder Post end
 
+    //scaffolder Site start
+    public function sitesAction(){
+    	$this->view->model = "Site";
+    	$this->view->primary = Jien::model($this->view->model)->getPrimary();
+    	$this->view->data = Jien::model($this->view->model)->orderBy("site.site_id DESC")->withPager($this->params('page', 1))->filter($this->params())->get();
+    }
+
+    public function siteAction(){
+    	$this->view->model = "Site";
+    	$id = $this->params('id');
+    	if($id){
+    		$this->view->data = Jien::model($this->view->model)->get($id);
+    	}
+    }
+    //scaffolder Site end
+
 // skeleton - dont remove this line, it's for scaffolding reason //
 
 

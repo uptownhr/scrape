@@ -4,7 +4,10 @@
 
 <div style="margin: 0 auto;  border: 0px solid;">
 
-    <div class="posts grid list" >
+    <div class="posts grid list">
+
+        <div style="width: 69%; float: left;">
+
         <?php
         $c = 0;
         foreach($this->posts->rows() AS $key=>$row){
@@ -38,7 +41,13 @@
         <?php } ?>
         <?php echo $this->pager($this->posts->pager(), 'partials/pager/pager_news.phtml'); ?>
 
-    </div>
+        </div>
 
+        <div style="float: right; width: 30%;" >
+            <a class="twitter-timeline" href="https://twitter.com/search?q=%23popular" data-widget-id="409224148523552768">Tweets about "#popular"</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
+    </div>
 
 </div>

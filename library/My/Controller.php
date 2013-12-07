@@ -8,10 +8,17 @@ class My_Controller extends Jien_Controller {
         // if it doesn't exist, it will use the default
         $theme = THEME;
         $this->view->addScriptPath(APPLICATION_PATH.'/views/'.$theme.'/');
-        $this->layout('site');
+
+        // get info from Site model
+        $site = Jien::model("Site")->where("site_url = '{$_SERVER['HTTP_HOST']}'")->get();
+        if($site->count() == 0){
+            $site = Jien::model("Site")->get(1);
+        }
+        $this->site = $this->view->site = $site;
 
         // set title
-        $this->view->title = TITLE;
+        $this->view->title = $site->row('site_title', TITLE);
+        $this->layout('site');
 
     }
 
