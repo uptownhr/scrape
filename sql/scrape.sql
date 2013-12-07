@@ -289,7 +289,7 @@ CREATE TABLE `Site` (
 
 LOCK TABLES `Site` WRITE;
 /*!40000 ALTER TABLE `Site` DISABLE KEYS */;
-INSERT INTO `Site` VALUES (1,'The Scrapist','scrapist.app','jaequery','<a class=\"twitter-timeline\" href=\"https://twitter.com/search?q=%23php\" data-widget-id=\"409227367832240128\">Tweets about \"#php\"</a>\r\n<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>\r\n','','2013-12-06 23:39:02','2013-12-07 08:09:27',NULL,1);
+INSERT INTO `Site` VALUES (1,'The Scrapist','scrapist.app','jaequery','<a class=\"twitter-timeline\" href=\"https://twitter.com/search?q=%23php\" data-widget-id=\"409227367832240128\">Tweets about \"#php\"</a>\r\n<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>\r\n','<script>\r\n  (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){\r\n  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\r\n  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\r\n  })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');\r\n\r\n  ga(\'create\', \'UA-46282306-2\', \'lolhacker.com\');\r\n  ga(\'send\', \'pageview\');\r\n\r\n</script>','2013-12-06 23:39:02','2013-12-07 08:19:27',NULL,1);
 /*!40000 ALTER TABLE `Site` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -350,4 +350,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-07  0:09:43
+-- Dump completed on 2013-12-07  0:23:37
