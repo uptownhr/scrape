@@ -2,6 +2,7 @@
 
 require_once dirname(__FILE__) . '/OAuth.php';
 
+
 /**
  * Twitter for PHP - library for sending messages to Twitter and receiving status updates.
  *
@@ -11,14 +12,6 @@ require_once dirname(__FILE__) . '/OAuth.php';
  * @link       http://phpfashion.com/
  * @see        http://dev.twitter.com/doc
  * @version    3.0
-
- * usage:
-    $consumerKey = '7F8PEZx4BTfneY9eawO7ww';
-    $consumerSecret = 'os1sPL1OykuoQIMBDqwU1WgguKl2zDy48YxYayLJI';
-    $accessToken = '1363677223-9loyQxA7QCfsvbWzlJOIY9aGOoGkSpSUUBLdCqZ';
-    $accessTokenSecret = 'Y1NUTX3NI8DkOOZLIV8xAi2L6DqhhxOieu15DEW5VQ';
-    $twitter = new Twitter($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
-    $twitter->send($tweet);
  */
 class Twitter
 {
