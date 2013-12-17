@@ -342,6 +342,22 @@ class AdminController extends My_Controller {
     }
     //scaffolder Site end
 
+    //scaffolder Sitesource start
+    public function sitesourcesAction(){
+    	$this->view->model = "Sitesource";
+    	$this->view->primary = Jien::model($this->view->model)->getPrimary();
+    	$this->view->data = Jien::model($this->view->model)->orderBy("sitesource.sitesource_id DESC")->withPager($this->params('page', 1))->filter($this->params())->get();
+    }
+
+    public function sitesourceAction(){
+    	$this->view->model = "Sitesource";
+    	$id = $this->params('id');
+    	if($id){
+    		$this->view->data = Jien::model($this->view->model)->get($id);
+    	}
+    }
+    //scaffolder Sitesource end
+
 // skeleton - dont remove this line, it's for scaffolding reason //
 
 
