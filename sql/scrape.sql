@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: jien_scrape
 -- ------------------------------------------------------
--- Server version	5.5.31-0ubuntu0.12.10.1-log
+-- Server version	5.5.31-0ubuntu0.12.10.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -92,7 +92,7 @@ CREATE TABLE `Datatype` (
   `deleted` datetime DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`datatype_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,7 +101,7 @@ CREATE TABLE `Datatype` (
 
 LOCK TABLES `Datatype` WRITE;
 /*!40000 ALTER TABLE `Datatype` DISABLE KEYS */;
-INSERT INTO `Datatype` VALUES (2,'Scrapesource',2,'2013-12-04 14:39:23','0000-00-00 00:00:00',NULL,1),(4,'Post',3,'2013-12-04 15:08:08','0000-00-00 00:00:00',NULL,1),(5,'Site',4,'2013-12-06 23:38:22','0000-00-00 00:00:00',NULL,1),(6,'Site',5,'2013-12-16 16:41:41','0000-00-00 00:00:00',NULL,1),(7,'Site',6,'2013-12-16 16:42:17','0000-00-00 00:00:00',NULL,1),(8,'Sitesource',7,'2013-12-16 17:00:49','0000-00-00 00:00:00',NULL,1);
+INSERT INTO `Datatype` VALUES (2,'Scrapesource',2,'2013-12-04 14:39:23','0000-00-00 00:00:00',NULL,1),(4,'Post',3,'2013-12-04 15:08:08','0000-00-00 00:00:00',NULL,1),(9,'Site',4,'2014-01-29 18:45:45','0000-00-00 00:00:00',NULL,1);
 /*!40000 ALTER TABLE `Datatype` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -346,7 +346,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (5,1,0,11,'admin','$2a$08$LtbZ7x22f4uYzlBJz.2nBuIg2L5HiX0APDWPJZT0Tv1pkVvs6BYqS','male','admin@demo.com','1982-01-06','jien','framework','123 abc','#101','abc city','CA',90000,'United States','1231231234','Test','','2011-10-11 15:40:41','2013-12-04 14:31:48','0000-00-00 00:00:00','2013-12-04 14:31:48',1);
+INSERT INTO `User` VALUES (5,1,0,11,'admin','$2a$08$LtbZ7x22f4uYzlBJz.2nBuIg2L5HiX0APDWPJZT0Tv1pkVvs6BYqS','male','admin@demo.com','1982-01-06','jien','framework','123 abc','#101','abc city','CA',90000,'United States','1231231234','Test','','2011-10-11 15:40:41','2014-01-29 18:42:58','0000-00-00 00:00:00','2014-01-29 18:42:58',1);
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -359,4 +359,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-16 17:47:02
+-- Dump completed on 2014-01-29 18:46:58
