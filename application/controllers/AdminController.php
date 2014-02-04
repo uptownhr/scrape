@@ -303,7 +303,9 @@ class AdminController extends My_Controller {
 
     public function scrapesourceAction(){
     	$this->view->model = "Scrapesource";
+    	$this->view->categories = Jien::model('Category')->get();
     	$id = $this->params('id');
+    	
     	if($id){
     		$this->view->data = Jien::model($this->view->model)->get($id);
     	}
