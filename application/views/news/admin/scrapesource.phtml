@@ -59,13 +59,14 @@
        
        
             <div class="form-group">
-                <label for="hash" class="col-lg-4 control-label">Hash</label>
+                <label for="hash" class="col-lg-4 control-label">Hashes</label>
                 <div class="col-lg-8">
-                    <input class="form-control" name="hash" value="<?php echo $this->data->row("hash"); ?>" type="text">
+                    <input class="form-control" name="hashes"  type="text" id="hashes" value="<?php echo implode(', ', $this->data->hashes); ?>" />
+                    
                 </div>
             </div>
 
-    	
+			
     	
     	
 			<div class="form-group">
@@ -82,3 +83,18 @@
     	</div><!--.tab-pane-->
     </div><!--.tab-content-->
 </form>
+
+
+<script type="text/javascript" src="/js/tag-it.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="/css/jquery.tagit.css" />
+<script type="text/javascript">
+	jQuery(function() {
+
+		var hashes = 
+		jQuery('#hashes').tagit( {
+
+			}
+		);
+	})
+	
+</script>

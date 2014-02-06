@@ -309,6 +309,11 @@ class AdminController extends My_Controller {
     	if($id){
     		$this->view->data = Jien::model($this->view->model)->get($id);
     	}
+    	$this->view->data->hashes = array();
+    	$hashes_rows = Jien::model('Scrapesourcehash')->select('hash')->where('scrapesource_id')->get()->rows();
+    	foreach($hashes_rows as $_hash) {
+			$this->view->data->hashes[] = $_hash['hash'];
+		}
     }
     //scaffolder Scrapesource end
 
