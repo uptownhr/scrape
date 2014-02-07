@@ -1,5 +1,6 @@
  ALTER TABLE Scrapesource ADD COLUMN category_id INT NOT NULL ; 
 
+
 CREATE TABLE `Scrapesource_hash` (
   `hash_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `scrapesource_id` int(10) unsigned NOT NULL,
