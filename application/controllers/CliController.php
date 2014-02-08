@@ -1,9 +1,30 @@
 <?php
 
-class CliController extends Jien_Controller {
+class CliController extends Zend_Controller_Action {
 
-    public function init(){
-        parent::init();
+    public function newScrapeAction(){
+
+        $source = array(
+            'url' => 'http://www.google.com/rss',
+            'category_id' => '1',
+            'fetcher' => 'Rss',
+            'parser' => 'Rss_Article'
+        );
+
+        $scrape = new Scrape();
+
+        $scrape->setSource($source);
+
+        $res = $scrape->consume();
+
+        if($res){
+            $data = $scrape->getParsedData();
+            print_r($data);
+            //data contains list of articles array
+        }else{
+            echo "error";
+        }
+        exit;
     }
 
     public function twitterAction(){

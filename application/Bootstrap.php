@@ -1,7 +1,7 @@
 <?php
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap{
-        protected function _initRouter(){
+    protected function _initRouter(){
             if (PHP_SAPI == 'cli')
             {
                 $this->bootstrap ('frontcontroller');
