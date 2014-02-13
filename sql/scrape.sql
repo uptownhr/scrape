@@ -373,3 +373,4 @@ CREATE TABLE `Scrapesource_hash` (
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`hash_id`)
 	
+

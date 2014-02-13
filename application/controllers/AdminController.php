@@ -304,13 +304,13 @@ class AdminController extends My_Controller {
     public function scrapesourceAction(){
     	$this->view->model = "Scrapesource";
     	$this->view->categories = Jien::model('Category')->get();
-    	$id = $this->params('id');
+    	$id = intval($this->params('id'));
     	
     	if($id){
     		$this->view->data = Jien::model($this->view->model)->get($id);
     	}
     	$this->view->data->hashes = array();
-    	$hashes_rows = Jien::model('Scrapesourcehash')->select('hash')->where('scrapesource_id')->get()->rows();
+    	$hashes_rows = Jien::model('Scrapesourcehash')->select('hash')->where('scrapesource_id = ' . $id)->get()->rows();
     	foreach($hashes_rows as $_hash) {
 			$this->view->data->hashes[] = $_hash['hash'];
 		}
